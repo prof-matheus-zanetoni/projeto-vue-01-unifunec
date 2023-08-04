@@ -1,4 +1,4 @@
-# projeto-vue01-unifunec
+# projeto-vue-01-unifunec
 
 This template should help get you started developing with Vue 3 in Vite.
 
@@ -10,19 +10,19 @@ This template should help get you started developing with Vue 3 in Vite.
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+## Project Setup (instalar dependências)
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Compile and Hot-Reload for Development (executar em modo de desenvolvedor)
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Compile and Minify for Production (criar versão de produção)
 
 ```sh
 npm run build

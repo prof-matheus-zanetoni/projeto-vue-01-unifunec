@@ -1,5 +1,5 @@
 <template>
-    <div class="position-absolute top-50 start-50 translate-middle border p-5 rounded">
+    <div class="position-absolute top-50 start-50 translate-middle border p-5 rounded shadow">
         <h1 class="text-center">Operação de divisão</h1>
         <form @submit.prevent="dividir()">
             <div class="col">
@@ -29,10 +29,10 @@ const divisao = ref(null)
 const campoDesabilitado = ref(false)
 
 function dividir() {
-    campoDesabilitado.value = true
     if(n2.value == 0) {
         alert("O divisor não pode ser zero!");
     } else {
+        campoDesabilitado.value = true
         divisao.value = n1.value / n2.value
     }
 }

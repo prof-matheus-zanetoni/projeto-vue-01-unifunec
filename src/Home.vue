@@ -1,6 +1,5 @@
 <template>
-    <div class="card position-absolute top-50 start-50
-    translate-middle border rounded">
+    <div class="card position-absolute top-50 start-50 translate-middle border rounded shadow">
         <div class="card-header">
             <h1>Menu principal do projeto calculadora</h1>
         </div>
@@ -17,6 +16,9 @@
             <router-link to="divisao" class="btn btn-info">
                 Divisão
             </router-link>
+        </div>
+        <div class="card-footer text-center">
+            Copyright &copy; {{ new Date().getFullYear() }}
         </div>
     </div>
 </template>

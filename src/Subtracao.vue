@@ -1,6 +1,5 @@
 <template>
-    <div class="position-absolute top-50 start-50
-    translate-middle border p-5 rounded">
+    <div class="position-absolute top-50 start-50 translate-middle border p-5 rounded shadow">
         <h1 class="text-center">Operação de subtração</h1>
         <form @submit.prevent="subtrair()">
             <div class="col">

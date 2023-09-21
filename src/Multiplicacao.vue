@@ -22,6 +22,8 @@
 
 <script setup>
     import { ref } from 'vue'
+    import CalculadoraService from './services/CalculadoraService'
+    import Swal from 'sweetalert2'
 
     const n1 = ref(0)
     const n2 = ref(0)
@@ -30,7 +32,12 @@
 
     function multiplicar() {
         campoDesabilitado.value = true
-        multiplicacao.value = n1.value * n2.value
+        const service = new CalculadoraService()
+        service.multiplicar(n1.value, n2.value).then((response) => {
+            multiplicacao.value = response.data
+        }, (error) => {
+            Swal.fire("Erro", error.response.data.mensagem, "error")
+        })
     }
 
     function limparReferencias() {

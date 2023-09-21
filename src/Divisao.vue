@@ -21,25 +21,28 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+    import { ref } from 'vue'
+    import CalculadoraService from './services/CalculadoraService'
+    import Swal from 'sweetalert2'
 
-const n1 = ref(0)
-const n2 = ref(0)
-const divisao = ref(null)
-const campoDesabilitado = ref(false)
+    const n1 = ref(0)
+    const n2 = ref(0)
+    const divisao = ref(null)
+    const campoDesabilitado = ref(false)
 
-function dividir() {
-    if(n2.value == 0) {
-        alert("O divisor não pode ser zero!");
-    } else {
+    function dividir() {
         campoDesabilitado.value = true
-        divisao.value = n1.value / n2.value
+        const service = new CalculadoraService()
+        service.dividir(n1.value, n2.value).then((response) => {
+            divisao.value = response.data
+        }, (error) => {
+            Swal.fire("Erro", error.response.data.mensagem, "error")
+        })
     }
-}
 
-function limparReferencias() {
-    campoDesabilitado.value = false
-    n1.value = n2.value = 0
-    divisao.value = null
-}
+    function limparReferencias() {
+        campoDesabilitado.value = false
+        n1.value = n2.value = 0
+        divisao.value = null
+    }
 </script>
